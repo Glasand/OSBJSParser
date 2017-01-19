@@ -6,7 +6,7 @@
 	window.addEventListener('message', function(event) { 
 
     // IMPORTANT: Check the origin of the data! 
-    if (~event.origin.indexOf(null)) { 
+    if (~event.origin.indexOf("https://glasand.github.io/OSBJSParser/index.html")) { 
         // The data has been sent from your site 
 
         // The data sent with postMessage is stored in event.data 
@@ -27,6 +27,7 @@ run();
     } else { 
         // The data hasn't been sent from your site! 
         // Be careful! Do not use it. 
+        console.log("Error");
         return; 
     } 
 }); 
