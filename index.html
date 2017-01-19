@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Parser</title>
+	
+	<link rel="stylesheet" href="lib/codemirror.css">
+	<script src="lib/codemirror.js"></script>
+	<script src="lib/javascript.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<script src="lib/lexar.js"></script>
+</head>
+<body>
+<textarea id="code" name="code">
+</textarea>
+<br>
+<br>
+<button id="submit">Generate</button>
+<iframe id="result" src="lib/generator.html"></iframe>
+</body>
+<script type="text/javascript">
+	var editor = CodeMirror.fromTextArea(document.getElementById("code"), 
+	{
+		lineNumbers: true,
+		mode: "javascript"
+	});
+
+</script>
+<script src="lib/stripper.js"></script>
+</html>

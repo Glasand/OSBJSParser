@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script type="text/javascript" src="Parser.js"></script>
+<script type="text/javascript">
+	window.addEventListener('message', function(event) { 
+
+    // IMPORTANT: Check the origin of the data! 
+    if (~event.origin.indexOf(null)) { 
+        // The data has been sent from your site 
+
+        // The data sent with postMessage is stored in event.data 
+        script = event.data;
+        // Create the element
+
+var scriptHTML = document.createElement("script");
+
+// Add script content
+
+scriptHTML.innerHTML = script;
+
+// Append
+
+document.head.appendChild(scriptHTML);
+run();
+
+    } else { 
+        // The data hasn't been sent from your site! 
+        // Be careful! Do not use it. 
+        return; 
+    } 
+}); 
+</script>
+</head>
+<body>
+</body>
+</html>
